@@ -4,24 +4,16 @@ const Schema = mongoose.Schema;
 const newSchema = new Schema({
   title: {
     type: String,
-    required: true,
-    default: "noname",
-    maxlength:[5 , 'malumot motogri kiritdingiz']
-  },
-  author: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    default: 0,
-  },
-  year:{
-      type:Number,
-      max:2020,
-      min: 1991,
-  },
+    requierd:true,
 
+  },
+  category:String,
+  country:String,
+  year:Number,
+  director_id: Schema.Types.ObjectId,
+  imdb_score: Number,
+
+  // {'title':'foo', 'category':'bar', 'country':'Uzbekistan', year:1990, director:"id", imdb_score: 9.7 }
 });
 
 module.exports = mongoose.model("schema", newSchema);

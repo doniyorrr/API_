@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
 
-app.use(r_Index);
+app.use("/api/movies" ,r_Index);
 
 app.use(express.static(path.join(__dirname, "public")));
 
